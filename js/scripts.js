@@ -4,7 +4,11 @@ $(function(){
     event.preventDefault();
     var countToVal=parseInt($("input#countTo").val());//retrive data value
     var countByVal=parseInt($("input#countBy").val());//retrive data valuei
-    if(countToVal>0 &&countByVal>0){//count to/by greater than 0
+      if(countByVal>countToVal){
+        $("#output").append("<li>Please count by smaller number </li>");
+
+      }
+      else if(countToVal>0 &&countByVal>0){//count to/by greater than 0
      result = function(){
       for(var i=countByVal;i<=countToVal;i+=countByVal){
           $("#output").append("<li>"+i+"</li>");
